@@ -3,8 +3,8 @@ package Recursion;
 public class Recursion {
 
     static void main() {
-        printBoth(5);
 
+        System.out.println(fact(0));
     }
 
 
@@ -33,6 +33,13 @@ public class Recursion {
         System.out.println(n);
         printBoth(n-1);
         System.out.println(n);
+    }
+
+    public static int fact(int n){
+     if(n==1||n==0){
+         return 1;
+     }
+     return n* fact(n-1);
     }
 
 }
