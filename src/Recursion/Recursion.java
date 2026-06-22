@@ -4,7 +4,7 @@ public class Recursion {
 
     static void main() {
 
-        System.out.println(fact(0));
+        System.out.println(sum(6));
     }
 
 
@@ -40,6 +40,14 @@ public class Recursion {
          return 1;
      }
      return n* fact(n-1);
+    }
+
+    public static int sum(int n){
+        if(n==1){
+            return 1;
+        }
+
+        return n+sum(n-1);
     }
 
 }
