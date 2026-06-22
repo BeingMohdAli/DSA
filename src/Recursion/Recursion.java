@@ -3,9 +3,10 @@ package Recursion;
 public class Recursion {
 
     static void main() {
-        num(5);
+        printBoth(5);
 
     }
+
 
     public static void num(int n ){
        if(n==0){
@@ -14,7 +15,7 @@ public class Recursion {
        num(n-1);
         System.out.println(n);
     }
-    public void numRev(int n){
+    public static void numRev(int n){
         if(n==0){
             return;
 
@@ -23,6 +24,15 @@ public class Recursion {
         numRev(n-1);
 
 
+    }
+
+    public static void printBoth(int n){
+        if(n==0){
+            return;
+        }
+        System.out.println(n);
+        printBoth(n-1);
+        System.out.println(n);
     }
 
 }
