@@ -4,7 +4,7 @@ public class Recursion {
 
     static void main() {
 
-        System.out.println(sum(6));
+        System.out.println(sumDigits(142507));
     }
 
 
@@ -50,5 +50,13 @@ public class Recursion {
         return n+sum(n-1);
     }
 
+    public static int sumDigits(int n ){
+        if(n/10<1){
+            return n;
+
+        }
+
+        return n % 10 + sumDigits(n/10);
+    }
 }
 
