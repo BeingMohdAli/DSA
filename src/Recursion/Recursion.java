@@ -4,7 +4,7 @@ public class Recursion {
 
     static void main() {
 
-        System.out.println(revNum(1));
+        System.out.println(countZeros(188800023));
     }
 
 
@@ -68,21 +68,33 @@ public class Recursion {
 //        return reverseNum(n/10) ;
 //    }
 
-    public static int revNum(int n){
+    public static int revNum(int n) {
 
-        int digit = ((int)Math.log10(n)) +1;
-        return helper(n , digit);
+        int digit = ((int) Math.log10(n)) + 1;
+        return helper(n, digit);
+
     }
 
     private static int helper(int n, int digit) {
-        if((n/10)<1){
-            return n ;
+        if ((n / 10) < 1) {
+            return n;
         }
-        return  (n%10) *(int) Math.pow(10,digit -1) + helper(n/10,digit-1);
+        return (n % 10) * (int) Math.pow(10, digit - 1) + helper(n / 10, digit - 1);
+    }
+
+    public static boolean palindrome(int n) {
+        return n == revNum(n);
+
+
     }
 
 
+   public  static int countZeros(int n) {
+        if (n == 0) return 0;
+        int rem = n % 10;
+        int contribution = (rem == 0) ? 1 : 0;
+        return contribution + countZeros(n / 10);
+    }
+
 }
-
-
 
