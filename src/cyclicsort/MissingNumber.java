@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MissingNumber {
     static void main() {
-        int [] arr = {0,1};
+        int [] arr = {0,1,2,4};
         System.out.println(missingNumber(arr));
     }
 
