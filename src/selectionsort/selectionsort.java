@@ -13,7 +13,7 @@ public class selectionsort {
 
         for (int i = 0; i < arr.length-1; i++) {
             int k =i;
-            for (int j = i; j < arr.length; j++) {
+            for (int j = i+1; j < arr.length; j++) {
                 if(arr[j]<arr[k]){
                     k = j;
                 }
