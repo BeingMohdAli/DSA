@@ -4,7 +4,13 @@ import java.util.List;
 public class recursionstring {
 
     static void main() {
-        System.out.println(permutation("abc"));
+        System.out.println(lc17("23"));
+
+
+
+
+
+
     }
 
     static String fun(String s){
@@ -27,22 +33,31 @@ public class recursionstring {
     }
 
 
-    static List<String> permutation(String s){
-        if(s.length()==1){
+  static List<String> lc17(String s){
+      String[] map = {
+              "", "", "abc", "def", "ghi",
+              "jkl", "mno", "pqrs", "tuv", "wxyz"
+      };
+
+        if(s.isEmpty()){
             List<String> list = new ArrayList<>();
-            list.add(s);
+            list.add("");
             return list;
-
         }
+        char ch = s.charAt(0);
+        int index = ch-'0';
+      String pair = map[index];
+      List<String> small = lc17(s.substring(1));
+      List<String> answer = new ArrayList<>();
 
-        char a = s.charAt(0);
-        List<String> small = permutation(s.substring(1));
-        List<String> ans = new ArrayList<>();
-        for(String i:small){
-            ans.add(a+i);
-            ans.add(i+a);
-        }
-        return ans ;
-    }
+      for (int i = 0; i < pair.length(); i++) {
+             char c = pair.charAt(i);
+          for (int j = 0; j < small.size(); j++) {
+              answer.add(c+small.get(j));
+          }
+      }
+      return answer;
+
+  }
 
 }
