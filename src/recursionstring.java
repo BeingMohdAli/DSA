@@ -4,13 +4,8 @@ import java.util.List;
 public class recursionstring {
 
     static void main() {
-        System.out.println(lc17("23"));
-
-
-
-
-
-
+        List<String> strings = lc17("23");
+        System.out.println(strings);
     }
 
     static String fun(String s){
@@ -23,12 +18,13 @@ public class recursionstring {
 
     char a  = s.charAt(0);
 
+
+
     if(a=='a'){
        return fun(s.substring(1));
     }
 //#this concatenation will work because this whole thing will become string char + str = str
     return a + fun(s.substring(1));
-
 
     }
 
@@ -56,11 +52,9 @@ public class recursionstring {
 
              for (int j = 0; j < small.size(); j++) {
 
-
               answer.add(c+small.get(j));
           }
       }
-
 
       return answer;
 
