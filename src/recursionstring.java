@@ -53,9 +53,13 @@ public class recursionstring {
       for (int i = 0; i < pair.length(); i++) {
              char c = pair.charAt(i);
           for (int j = 0; j < small.size(); j++) {
+
+
               answer.add(c+small.get(j));
           }
       }
+
+
       return answer;
 
   }
