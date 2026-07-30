@@ -1,5 +1,9 @@
 package StriverAZDSAsheet;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+
 public class Binarysearchq2 {
 //    Given a sorted array of nums and an integer x, write a program to find the lower bound of x.
 //
@@ -40,4 +44,8 @@ public class Binarysearchq2 {
 //        }
 //    }
 
-}
+}//
+
+
+
+
