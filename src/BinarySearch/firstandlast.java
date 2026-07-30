@@ -1,21 +1,26 @@
 package BinarySearch;
 
+import java.util.Arrays;
+
 public class firstandlast {
     static void main() {
 int[] arr  = {5, 7, 7, 8, 8, 10};
 int target = 8;
-        System.out.println(f(arr,target));
-        System.out.println(l(arr,target));
+        int[] fandl = fandl(arr, target);
+        String string = Arrays.toString(fandl);
+        System.out.println(string);
+
 
     }
-    public static int f(int[] arr,int target){
+    public static int[] fandl(int[] arr,int target){
         int start = 0;
         int end = arr.length-1;
-        int ans = -1;
+        int f = -1;
+        int l = -1;
         while(start<=end){
             int mid = start + (end - start)/2;
             if(arr[mid]==target){
-                ans = mid ;
+                f = mid ;
                 end = mid -1;
             }
             else if(target<arr[mid]){
@@ -25,19 +30,12 @@ int target = 8;
                 start = mid+1;
             }
         }
-        return ans;
-
-    }
-
-
-    public static int l(int[] arr,int target){
-        int start = 0;
-        int end = arr.length-1;
-        int ans = -1;
+        start = 0;
+        end = arr.length-1;
         while(start<=end){
             int mid = start + (end - start)/2;
             if(arr[mid]==target){
-                ans = mid ;
+                l = mid ;
                 start = mid +1;
             }
             else if(target<arr[mid]){
@@ -47,10 +45,9 @@ int target = 8;
                 start = mid+1;
             }
         }
-        return ans;
 
+        return new int[]{f,l};
     }
-
 
 
 }
