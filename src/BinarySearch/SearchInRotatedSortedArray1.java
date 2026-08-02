@@ -5,7 +5,7 @@ public class SearchInRotatedSortedArray1 {
     static void main() {
         int[] arr =
                 {4,5,6,7,0,1,2};
-        int target = 1;
+        int target = 0;
         System.out.println(findingInRotatedSortedArray(arr,target));
     }
     public static int findMinimumIndex(int[] arr){
@@ -24,43 +24,34 @@ public class SearchInRotatedSortedArray1 {
 
     public static int findingInRotatedSortedArray(int[] arr,int target){
         if(arr.length==1){
-            if (arr[0] == target) {
-
-                return 0;
-            }else{
-                return -1;
-            }
+         return  arr[0]==target ? 0:-1;
         }
-        int start = 0;
-        int end = findMinimumIndex(arr)-1;
-        if(target<=arr[end]&&target>=arr[start]){
-        while(start<=end){
-        int mid = start + (end-start)/2;
-        if(arr[mid]==target){
-            return mid;
-        }else if(arr[mid]<target){
-            start = mid +1 ;
-
-        }else{
-            end = mid-1;
+        int start , end;
+        int pivot = findMinimumIndex(arr);
+        if(pivot==0){
+            start = 0;
+            end = arr.length -1;
         }
-    }
+        else if(target<=arr[pivot-1]&&target>=arr[0]){
+     start = 0;
+     end = pivot -1;
 }
-            start =  end +1;
-            end = arr.length-1;
-            int ans = -1;
+        else {
+            start = pivot;
+            end = arr.length - 1;
+        }
+
             while(start<=end){
                 int mid = start + (end-start)/2;
                 if(arr[mid]==target){
-                 ans =mid;
-                 break;
+              return mid;
                 }else if(arr[mid]<target){
                     start = mid +1 ;
                 }else{
                     end = mid-1;
                 }
             }
-            return ans;
+            return -1;
         }
 
     }
