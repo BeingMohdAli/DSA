@@ -5,7 +5,7 @@ import javax.swing.plaf.PanelUI;
 public class countnoofoccur {
     static void main() {
         int[] arr = {5, 7, 7, 8, 8, 10};
-        int target = 6;
+        int target = 9;
         System.out.println(nofoccur(arr, target));
     }
 
@@ -42,7 +42,7 @@ public class countnoofoccur {
                 start = mid+1;
             }
         }
-if(f==-1||l==-1){
+if(f==-1){
     return 0;
 }
         return l-f+1;
