@@ -7,7 +7,7 @@ public class Str {
 
 
 //        System.out.println(a.equals(b));
-        System.out.println('a'+0);
+        System.out.println('a'+1);
 
     }
 
