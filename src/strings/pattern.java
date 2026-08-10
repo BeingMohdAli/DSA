@@ -53,6 +53,10 @@ public class pattern{
 
         System.out.println(str);
 
+        String a = "ALi";
+        char[] charArray = a.toCharArray();
+        System.out.println(Arrays.toString(charArray));
+
     }
     }
 
