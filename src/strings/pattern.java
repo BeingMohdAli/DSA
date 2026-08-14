@@ -3,11 +3,7 @@ package strings;
 import java.util.Arrays;
 
 public class pattern{
-    /*   * * * *
-    /*   * * *
-    /*   * *
-    /*   *
-     */
+
     static void main() {
 //        int rowLength = 4;
 //        int colLength = 4;
@@ -39,23 +35,32 @@ public class pattern{
 //       }
 //        System.out.println(Arrays.toString(words));
 //       String s = new String(words);
+//
+//        String s = "Hello world";
+//        String str = "";
+//        for (int i = s.length()-1; i >=0 ; i--) {
+//            str = s.charAt(i) + str;
+//            if(s.charAt(i)==' '){
+//                continue;
+//            }
+//
+//
+//        }
+//
+//        System.out.println(str);
 
-        String s = "Hello world";
-        String str = "";
-        for (int i = s.length()-1; i >=0 ; i--) {
-            str = s.charAt(i) + str;
-            if(s.charAt(i)==' '){
-                continue;
-            }
-
-
-        }
-
-        System.out.println(str);
-
-        String a = "ALi";
-        char[] charArray = a.toCharArray();
+        String s = "(()())(())";
+        char[] charArray = s.toCharArray();
         System.out.println(Arrays.toString(charArray));
+//        StringBuilder sb = new StringBuilder();
+//        sb.append("a");
+//        sb.append("l");
+//        System.out.println(sb.toString());
+//        String[] arr = {"a", "b", "c"};
+//
+//        String join = String.join("", arr);// "abc"
+//        Arrays.so
+
 
     }
     }
