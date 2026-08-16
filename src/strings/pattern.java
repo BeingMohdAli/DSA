@@ -1,6 +1,8 @@
 package strings;
 
 import java.util.Arrays;
+import java.util.Scanner;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class pattern{
 
@@ -49,9 +51,9 @@ public class pattern{
 //
 //        System.out.println(str);
 
-        String s = "(()())(())";
-        char[] charArray = s.toCharArray();
-        System.out.println(Arrays.toString(charArray));
+//        String s = "(()())(())";
+//        char[] charArray = s.toCharArray();
+//        System.out.println(Arrays.toString(charArray));
 //        StringBuilder sb = new StringBuilder();
 //        sb.append("a");
 //        sb.append("l");
@@ -60,7 +62,15 @@ public class pattern{
 //
 //        String join = String.join("", arr);// "abc"
 //        Arrays.so
+//        String s = "Hello";
+//
+//        s = s + " World";
+//        System.out.println(s);
+//Weak
 
+        Scanner sc = new Scanner(System.in);
+        String a = sc.nextLine();
+        System.out.println(a+2);
 
     }
     }
