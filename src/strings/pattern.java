@@ -68,10 +68,11 @@ public class pattern{
 //        System.out.println(s);
 //Weak
 
-        Scanner sc = new Scanner(System.in);
-        String a = sc.nextLine();
-        System.out.println(a+2);
+//        Scanner sc = new Scanner(System.in);
+//        String a = sc.nextLine();
+//        System.out.println(a+2);
 
+        System.out.println('d'-'a');
     }
     }
 
