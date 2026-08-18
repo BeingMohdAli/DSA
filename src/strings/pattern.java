@@ -1,10 +1,12 @@
 package strings;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class pattern{
+public class pattern {
 
     static void main() {
 //        int rowLength = 4;
@@ -31,7 +33,6 @@ public class pattern{
 //           words[end] = temp;
 //           start++;
 //           end--;
-
 
 
 //       }
@@ -72,7 +73,56 @@ public class pattern{
 //        String a = sc.nextLine();
 //        System.out.println(a+2);
 
-        System.out.println('d'-'a');
+//        System.out.println('d'-'a');
+
+
+//        List<Integer> integers = List.of(1, 3);
+//        System.out.println(integers);
+//        List<Integer> l = new ArrayList<>();
+//        l.add(1);
+//        l.add(5);
+//        l.add(2);
+//        l.add(3);
+//
+//        System.out.println(sort(l));
+        num(5);
+//
     }
+//    public static List<Integer> sort(List<Integer> l){
+//
+//        if(l.size()==1){
+//            return l;
+//        }
+//
+//       int removedElement = l.remove(l.size()-1);
+//        sort(l);
+//        for (int i = 0; i < l.size(); i++) {
+//
+//            if (l.get(i) <= removedElement) {
+//                continue;              // keep searching
+//            } else {
+//                l.add(i, removedElement);
+//                return l;              // we're done
+//            }
+//        }
+//
+//        l.add(removedElement);         // bigger than everything
+//        return l;
+//
+//    }
+
+    public static void num(int n){
+
+        if(n==1){
+            System.out.println(1);
+            System.out.println(1);
+            return ;
+        }
+        System.out.println(n);
+        num(n-1);
+        System.out.println(n);
+
     }
+
+}
 
