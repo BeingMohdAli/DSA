@@ -47,6 +47,8 @@ public class Maze {
             list.add(pro);
             return list;
 
+
+
         }
         ArrayList<String> s = new ArrayList<>();
         if (r > 1) {
