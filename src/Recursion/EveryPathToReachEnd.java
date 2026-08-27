@@ -6,47 +6,56 @@ import java.util.List;
 public class EveryPathToReachEnd {
 
     static void main() {
-        System.out.println(allTheWaysToReachEnd("",0,0));
+
+        boolean[][] grid = {
+                {true, true},
+                {true, true}
+        };
+        System.out.println(allPaths("",0,0,grid));
     }
 
-    public static List<String> allTheWaysToReachEnd(String pro, int r, int c){
-        if (r == 2 && c == 2) {
-            List<String> list = new ArrayList<>();
-            list.add(pro);
-            return list;
+    public static List<String> allPaths(String p, int r, int c, boolean[][] arr) {
 
+        // Current cell is already visited
+        if (!arr[r][c]) {
+            return new ArrayList<>();
         }
 
-        if(r==0&&c==0){
-            List<String> list = new ArrayList<>();
-            return list;
+        // Reached destination
+        if (r == arr.length - 1 && c == arr[0].length - 1) {
+            List<String> l = new ArrayList<>();
+            l.add(p);
+            return l;
         }
 
-        ArrayList<String> s = new ArrayList<>();
-        if (r <2) {
-            List<String> s1 = allTheWaysToReachEnd(pro + "D", r  + 1, c);
-            s.addAll(s1);
+        ArrayList<String> ans = new ArrayList<>();
+
+        // Mark current cell as visited
+        arr[r][c] = false;
+
+        // Down
+        if (r < arr.length - 1) {
+            ans.addAll(allPaths(p + "D", r + 1, c, arr));
         }
 
-        if (c < 2) {
-            List<String> s2 = allTheWaysToReachEnd(pro + "R", r, c + 1);
-            s.addAll(s2);
+        // Right
+        if (c < arr[0].length - 1) {
+            ans.addAll(allPaths(p + "R", r, c + 1, arr));
         }
 
-        if(r>0) {
-            List<String> s3 = allTheWaysToReachEnd(pro + "U", r-1, c );
-            s.addAll(s3);
+        // Up
+        if (r > 0) {
+            ans.addAll(allPaths(p + "U", r - 1, c, arr));
         }
-        if(c>0) {
-            List<String> s4 = allTheWaysToReachEnd(pro + "L", r, c-1 );
-            s.addAll(s4);
+
+        // Left
+        if (c > 0) {
+            ans.addAll(allPaths(p + "L", r, c - 1, arr));
         }
-        return s;
 
+        // Backtrack: make it available again
+        arr[r][c] = true;
 
-
-
-
-
-}
+        return ans;
+    }
 }
