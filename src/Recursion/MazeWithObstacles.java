@@ -7,7 +7,7 @@ public class MazeWithObstacles {
     static void main() {
         boolean[][] grid = {
                 {true, true, true},
-                {true, false, true},
+                {true, true, false},
                 {true, true, true}
         };
         System.out.println(mazeWithObstacles("",0,0,grid));
