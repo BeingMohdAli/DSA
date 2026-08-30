@@ -6,7 +6,7 @@ import java.util.List;
 public class NQueens {
     static void main() {
         List<Integer>l = new ArrayList<>();
-       nQueens(0,l,10);
+       nQueens(0,l,4);
     }
 
     public static void nQueens(int row, List<Integer> list,int n){
