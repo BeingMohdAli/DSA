@@ -11,6 +11,7 @@ String s = ")()())";
 
     }
 
+
     public static int longestValidParentheses(String s) {
         Stack<Integer> stack = new Stack<>();
         stack.push(-1);
