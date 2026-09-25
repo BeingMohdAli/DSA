@@ -7,7 +7,8 @@ import java.util.Stack;
 public class LC32 {
     static void main() {
 String s = ")()())";
-        System.out.println(longestValidParentheses(s));
+
+System.out.println(longestValidParentheses(s));
 
     }
 
