@@ -8,6 +8,7 @@ public class LC32 {
     static void main() {
 String s = ")()())";
         System.out.println(longestValidParentheses(s));
+
     }
 
     public static int longestValidParentheses(String s) {
