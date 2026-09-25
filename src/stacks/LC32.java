@@ -13,6 +13,7 @@ String s = ")()())";
     public static int longestValidParentheses(String s) {
         Stack<Integer> stack = new Stack<>();
         stack.push(-1);
+
         int maxlength = 0;
         for (int i = 0; i < s.length(); i++) {
             if(s.charAt(i)=='('){
