@@ -2,9 +2,14 @@ package maths;
 
 public class Prime {
     static void main() {
-        int i = 25;
-        for (int j = 0; j <= i; j++) {
-            System.out.println(j + " " + isPrime(j));
+        int i = 40;
+        int count= 0;
+        for (int j = 2; j <= i; j++) {
+            boolean prime = isPrime(j);
+            if(prime){
+                count++;
+                System.out.println(j+ " " + count);
+            }
         }
 
     }
