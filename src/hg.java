@@ -28,7 +28,8 @@ public class hg {
 //
 //      Thread.sleep(2000);
 //        System.out.println(Thread.currentThread().getName());
-Thread t = new Thread(()-> System.out.println(Thread.currentThread().getName()));
+        double x = 10.0/3;
+Thread t = new Thread(()-> System.out.println(x));
 t.start();
     }
 
