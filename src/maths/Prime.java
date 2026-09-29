@@ -2,7 +2,10 @@ package maths;
 
 public class Prime {
     static void main() {
-        System.out.println(isPrime(1));
+        int i = 25;
+        for (int j = 0; j <= i; j++) {
+            System.out.println(j + " " + isPrime(j));
+        }
 
     }
     public static boolean isPrime(int x){
