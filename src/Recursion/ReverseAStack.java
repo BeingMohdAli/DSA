@@ -26,16 +26,18 @@ public class ReverseAStack {
         }
         int pop = stack.pop();
         Stack<Integer> s = reverseStackEfficiently(stack);
-        Stack<Integer> temp = new Stack<>();
-        while (!s.isEmpty()){
-            temp.push(s.pop());
-        }
-        s.push(pop);
-        while(!temp.isEmpty()){
-            s.push(temp.pop());
-        }
+        return insertBottom(s, pop);
 
-        return s;
+    }
+    public static Stack<Integer> insertBottom(Stack<Integer> stack, int element){
+        if(stack.isEmpty()){
+            stack.push(element);
+            return stack;
+        }
+        Integer pop = stack.pop();
+        Stack<Integer> stack1 = insertBottom(stack, element);
+        stack1.push(pop);
+        return stack1;
 
     }
 
