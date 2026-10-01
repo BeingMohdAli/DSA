@@ -2,17 +2,19 @@ package Recursion;
 
 public class TowerOfHanoi {
     static void main() {
-     towerHanoi(2,'A','B','C');
+        System.out.println(towerHanoi(3,'A','B','C'));
     }
 
-    public static void towerHanoi(int n, char source, char helper, char dest){
+    public static int towerHanoi(int n, char source, char helper, char dest){
         if(n==0){
-            return;
+            return 0;
         }
 
-        towerHanoi(n-1,source,dest,helper);
+        int count = towerHanoi(n - 1, source, dest, helper);
         System.out.println("Move disk " + n + " from " + source + " to " + dest);
-        towerHanoi(n-1,helper,source,dest);
+        count++;
+        count+= towerHanoi(n - 1, helper, source, dest);
+        return count;
 
     }
 }
