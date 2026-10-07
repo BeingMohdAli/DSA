@@ -2,7 +2,7 @@ package maths;
 
 public class EuclideanAlgo {
     static void main() {
-        System.out.println(ea(10,5));
+        System.out.println(lCM(10,5));
     }
 
     public static int ea(int a , int b){
@@ -12,5 +12,9 @@ public class EuclideanAlgo {
         }
       return ea(b, a % b);
 
+    }
+    public static int lCM(int x , int y){
+        int hcf =  ea(x, y);
+        return  (x *y)/hcf;
     }
 }
