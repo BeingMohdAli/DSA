@@ -22,8 +22,20 @@ public class f {
         return bSR(a, target, start, mid - 1);     // faith: search left half
     }
 
+    public static int lsR(ArrayList<Integer> arr,  int target,int start,int end) {
+        if (start>end) {
+            return -1;
+        }
+        int element = arr.get(start);
+        if (element == target) {
+            return start;
+        }
+        return lsR(arr,  target,start +1,end);
+
+    }
+
     public static void main(String[] args) {
         ArrayList<Integer> list = new ArrayList<>(List.of(1, 3, 5, 7, 9));
-        System.out.println(bSR(list, 7, 0, list.size() - 1));   // 3
+        System.out.println(lsR(list,  10,0,list.size()-1));
     }
 }

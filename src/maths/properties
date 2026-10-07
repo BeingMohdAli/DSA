@@ -1,0 +1,9 @@
+Addition	(a + b) % m = ((a % m) + (b % m)) % m
+Subtraction	(a - b) % m = ((a % m) - (b % m) + m) % m
+Multiplication	(a × b) % m = ((a % m) × (b % m)) % m
+
+
+(x % m) % m = x % m
+
+3 mod 7 = 3
+Since 3 is smaller than 7
