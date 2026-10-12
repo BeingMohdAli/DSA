@@ -21,6 +21,16 @@ class Solution {
 
         return 1 + Math.max(x, y);
     }
+    public void printNotLevelWise(TreeNode root) {
+        if (root == null) {
+            return ;
+        }
+        System.out.println(root.val);
+        printNotLevelWise(root.left);
+        printNotLevelWise(root.right);
+
+    }
+
 
 }
 
@@ -34,6 +44,7 @@ public class MaxDepth {
         root.left.right = new TreeNode(5);
 
         Solution sol = new Solution();
-        System.out.println("Maximum Depth: " + sol.maxDepth(root));
+//        System.out.println("Maximum Depth: " + sol.maxDepth(root));
+         sol.print(root);
     }
 }
