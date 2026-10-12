@@ -45,6 +45,6 @@ public class MaxDepth {
 
         Solution sol = new Solution();
 //        System.out.println("Maximum Depth: " + sol.maxDepth(root));
-         sol.print(root);
+         sol.printNotLevelWise(root);
     }
 }
