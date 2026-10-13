@@ -4,6 +4,8 @@ package Trees;
 import java.sql.ClientInfoStatus;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 
 
 class TreeNode {
@@ -42,6 +44,28 @@ class Solution {
         printLevelWise(list);
 
     }
+    public void printLevelWiseUsingLoop( ArrayList<TreeNode> list){
+      while(!list.isEmpty()){
+          TreeNode curr = list.removeFirst();
+          System.out.print(curr.val+" ");
+
+          if(curr.left!=null)list.addLast(curr.left);
+          if(curr.right!=null) list.add(curr.right);
+      }
+
+    }
+    public void printLevelWiseUsingFullOptimise(Queue<TreeNode> q){
+        if(q.isEmpty()){
+            return;
+        }
+        TreeNode curr = q.poll();
+        System.out.print(curr.val+" ");
+        if(curr.left!=null)q.add(curr.left);
+        if(curr.right!=null)q.add(curr.right);
+        printLevelWiseUsingFullOptimise(q);
+
+    }
+
     public void printNotLevelWise(TreeNode root){
         if (root == null) {
             return ;
@@ -64,13 +88,15 @@ public class MaxDepth {
         root.left.left = new TreeNode(4);
         root.left.right = new TreeNode(5);
 
-         ArrayList<TreeNode> l = new ArrayList<>();
-         l.add(root);
-
+//         ArrayList<TreeNode> l = new ArrayList<>();
+//         l.add(root);
+Queue<TreeNode> q = new LinkedList<>();
+q.add(root);
         Solution sol = new Solution();
 //        System.out.println("Maximum Depth: " + sol.maxDepth(root));
 //         sol.printNotLevelWise(root);
-         sol.printLevelWise(l);
+//         sol.printLevelWise(l);
+         sol.printLevelWiseUsingFullOptimise(q);
 
     }
 }
