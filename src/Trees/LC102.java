@@ -26,7 +26,7 @@ public class LC102 {
                 if (curr.left != null) {
                     q.add(curr.left);
                 }
-                if (curr.left != null) {
+                if (curr.right != null) {
                     q.add(curr.right);
                 }
             }
