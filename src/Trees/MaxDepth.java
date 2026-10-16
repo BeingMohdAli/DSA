@@ -1,9 +1,8 @@
 
 package Trees;
 
-import java.sql.ClientInfoStatus;
 import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -12,10 +11,13 @@ class TreeNode {
     int val;
     TreeNode left;
     TreeNode right;
+    TreeNode next;
 
     TreeNode(int val) {
         this.val = val;
     }
+
+
 }
 
 class Solution {
