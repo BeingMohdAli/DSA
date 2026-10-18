@@ -1,6 +1,8 @@
 
 package Trees;
 
+import com.sun.source.tree.Tree;
+
 import java.util.ArrayList;
 
 import java.util.LinkedList;
@@ -77,6 +79,22 @@ class Solution {
         printNotLevelWise(root.right);
 
     }
+    public boolean findNode(TreeNode root,TreeNode target){
+        if (root == null) return false;
+        if (root == target) return true;
+
+        boolean leftAns = findNode(root.left, target);
+        if(leftAns) return leftAns;
+        return findNode(root.right,target);
+    }
+
+    public boolean isSibling(TreeNode root, TreeNode x , TreeNode y){
+        if (root == null) return false;
+        if((root.left==x&&root.right==y)||root.left==y&&root.right==x)return true;
+        boolean sibling = isSibling(root.left, x, y);
+        if(sibling) return true;
+        return isSibling(root.right,x,y);
+    }
 
 
 }
@@ -92,13 +110,14 @@ public class MaxDepth {
 
 //         ArrayList<TreeNode> l = new ArrayList<>();
 //         l.add(root);
-Queue<TreeNode> q = new LinkedList<>();
-q.add(root);
-        Solution sol = new Solution();
-//        System.out.println("Maximum Depth: " + sol.maxDepth(root));
-//         sol.printNotLevelWise(root);
-//         sol.printLevelWise(l);
-         sol.printLevelWiseUsingFullOptimise(q);
+//Queue<TreeNode> q = new LinkedList<>();
+//q.add(root);
+     Solution sol = new Solution();
+////        System.out.println("Maximum Depth: " + sol.maxDepth(root));
+////         sol.printNotLevelWise(root);
+////         sol.printLevelWise(l);
+//         sol.printLevelWiseUsingFullOptimise(q);
 
+         System.out.println(sol.isSibling(root ,root.left.left,root.left.right));
     }
 }
