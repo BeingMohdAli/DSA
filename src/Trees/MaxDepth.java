@@ -95,18 +95,34 @@ class Solution {
         if(sibling) return true;
         return isSibling(root.right,x,y);
     }
+    public  int numberOfEdgesLeft(TreeNode root) {
+        if (root==null||root.left==null) return 0;
+        return 1 + numberOfEdgesLeft(root.left);
+
+    }
+    public  int numberOfEdgesRight(TreeNode root) {
+        if (root==null||root.right==null) return 0;
+        return 1 + numberOfEdgesRight(root.right);
+    }
+    public  int sumOfMaxEdgesInLeftAndRight(TreeNode root) {
+        return numberOfEdgesRight(root)+numberOfEdgesLeft(root);
+    }
+
 
 
 }
 
 public class MaxDepth {
      static void main(String[] args) {
-
-        TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(3);
-        root.left.left = new TreeNode(4);
-        root.left.right = new TreeNode(5);
+//
+//        TreeNode root = new TreeNode(1);
+//        root.left = new TreeNode(2);
+//        root.right = new TreeNode(3);
+//        root.left.left = new TreeNode(4);
+//        root.left.right = new TreeNode(5);
+         TreeNode root = new TreeNode(3);
+         root.left = new TreeNode(1);
+         root.left.right = new TreeNode(2);
 
 //         ArrayList<TreeNode> l = new ArrayList<>();
 //         l.add(root);
@@ -118,6 +134,8 @@ public class MaxDepth {
 ////         sol.printLevelWise(l);
 //         sol.printLevelWiseUsingFullOptimise(q);
 
-         System.out.println(sol.isSibling(root ,root.left.left,root.left.right));
-    }
+//         System.out.println(sol.isSibling(root ,root.left.left,root.left.right));
+         int i = sol.sumOfMaxEdgesInLeftAndRight(root);
+         System.out.println(i);
+     }
 }
