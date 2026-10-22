@@ -1,12 +1,11 @@
 package heaps;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class LC1046 {
     static void main() {
         int[] arr = {2,7,4,1,8,1};
-        System.out.println(lastStoneWeight(arr));
+        System.out.println(lastStoneWeightOptimised(arr));
     }
 
     public static int lastStoneWeight(int[] stones) {
@@ -38,6 +37,25 @@ public class LC1046 {
         }
         if (l.isEmpty()) return 0;
         return l.get(0);
+    }
+    public static int lastStoneWeightOptimised(int[] stones){
+        PriorityQueue<Integer> q = new PriorityQueue<>(Collections.reverseOrder());
+        for (int i = 0; i < stones.length; i++) {
+            q.add(stones[i]);
+        }
+        while (q.size()>=2){
+            int x = q.poll();
+            int y  = q.poll();
+            if(x<y) {
+                y = y-x;
+                q.add(y);
+            } else if (x > y) {
+                x  = x - y;
+                q.add(x);
+            }
+        }
+        if (q.isEmpty()) return 0;
+        return q.peek();
     }
 
     }
