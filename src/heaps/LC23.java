@@ -34,7 +34,7 @@ class ListNode {
              l[i] = new ListNode(pq.poll());
          }
 
-         for (int i = 0; i < l.length; i++) {
+         for (int i = 0; i < l.length-1; i++) {
              l[i].next = l[i+1];
          }
          return l[0];
