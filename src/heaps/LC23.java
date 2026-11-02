@@ -40,4 +40,27 @@ class ListNode {
          return l[0];
 
     }
+        public ListNode mergeKListsOptimised(ListNode[] lists) {
+
+        PriorityQueue<ListNode> pq = new PriorityQueue<>((a,b)->a.val-b.val);
+
+        for (var node : lists){
+            if(node!=null) pq.add(node);
+
+        }
+
+        ListNode dummy = new ListNode();
+
+        ListNode tail = dummy;
+
+        while (!pq.isEmpty()){
+            ListNode smallest = pq.poll();
+            tail.next = smallest;
+            tail = smallest;
+
+            if(smallest.next!=null) pq.add(smallest.next);
+        }
+        return dummy.next;
+
+}
 }
