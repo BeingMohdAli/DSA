@@ -2,16 +2,17 @@ package Graphs;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class LC210 {
     static void main() {
-//        int[][] nums = {
-//
-//                {0,1}
-//
-//        };
-//        System.out.println(Arrays.toString(findOrder(2,nums)));
+        int[][] nums = {
+
+                {0,1}
+
+        };
+        System.out.println(Arrays.toString(findOrder(2,nums)));
 
     }
 
