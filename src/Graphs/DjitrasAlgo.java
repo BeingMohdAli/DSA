@@ -46,11 +46,27 @@ public class DjitrasAlgo {
         return dist;
 
 
-
-
-
-
-
-
+    }
+    public static int[] minDistanceDjitraUsingSet(int n, List<List<int[]>> graph, int source){
+        int[] dist = new int[n];
+        Arrays.fill(dist,Integer.MAX_VALUE);
+        dist[source] = 0;
+        TreeSet<int[]> t = new TreeSet<>((a,b)->a[0]!=b[0]?  Integer.compare(a[0],b[0]): Integer.compare(a[1],b[1]));
+        t .add(new int[]{0,source});
+        while (!t.isEmpty()) {
+            int[] current = t.pollFirst();
+            int distance = current[0];
+            int node = current[1];
+            for (var e : graph.get(node)) {
+                int neighbour = e[0];
+                int weight = e[1];
+                if (distance + weight < dist[neighbour]) {
+                    t.remove(new int[]{dist[neighbour], neighbour});// relaxation
+                    dist[neighbour] = distance + weight;
+                    t.add(new int[]{dist[neighbour], neighbour});
+                }
+            }
+        }
+        return dist;
     }
 }
