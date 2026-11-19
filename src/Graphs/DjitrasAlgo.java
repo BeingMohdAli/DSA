@@ -1,12 +1,25 @@
 package Graphs;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class DjitrasAlgo {
     static void main() {
-
+//Set<Integer> s0 = new HashSet<>();
+//Set<Integer> s1 = new LinkedHashSet<>();
+//Set<Integer> s2 = new TreeSet<>();
+//        s0.add(10);
+//        s0.add(9);
+//        s0.add(8);
+//        s1.add(10);
+//        s1.add(9);
+//        s1.add(8);
+//        s2.add(10);
+//        s2.add(9);
+//        s2.add(8);
+//
+//        System.out.println(s0);
+//        System.out.println(s1);
+//        System.out.println(s2);
     }
     public static int[] minDistanceDjitra(int n, List<List<int[]>> graph, int source){
         int[] dist = new int[n];
