@@ -69,4 +69,43 @@ public class DjitrasAlgo {
         }
         return dist;
     }
+
+    public static void minDistanceDjitraPrint(int n,int des, List<List<int[]>> graph, int source){
+        int[] prev = new int[n];
+        Arrays.fill(prev,-1);
+        int[] dist = new int[n];
+        Arrays.fill(dist,Integer.MAX_VALUE);
+        dist[source] = 0;
+        PriorityQueue<int[]> pq = new PriorityQueue<>((a,b)->Integer.compare(a[0],b[0]));
+        pq.add(new int[]{0,source});
+        while (!pq.isEmpty()) {
+            int[] current = pq.poll();
+            int distance = current[0];
+            int node = current[1];
+            if (distance > dist[node]) continue;// outdated entry
+            if (node == des) break;
+            for (var e : graph.get(node)) {
+                int neighbour = e[0];
+                int weight = e[1];
+                if (distance + weight < dist[neighbour]) {        // relaxation
+                    dist[neighbour] = distance + weight;
+                    prev[neighbour] = node;
+                    pq.add(new int[]{dist[neighbour], neighbour});
+                }
+            }
+        }
+        if (dist[des]==Integer.MAX_VALUE) {
+            System.out.println("No Path");
+            return;
+        }
+        List<Integer> path = new ArrayList<>();
+        int a = des;
+        while (a!=-1){
+            path.add(a);
+            a= prev[a];
+        }
+            Collections.reverse(path);
+        System.out.println(path);
+
+    }
 }
