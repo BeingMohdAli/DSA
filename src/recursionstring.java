@@ -59,5 +59,21 @@ public class recursionstring {
       return answer;
 
   }
+//    public static int[] towerHeight(int[] arr) {
+//        int[] arr1 = new int[arr.length];
+//        for (int i = 0; i < arr.length; i++) {
+//            int preIndex = i;
+//            int afterIndex = i+1;
+//            while (preIndex>=0&&afterIndex< arr.length){
+//                if (arr[preIndex]>arr[i]&&arr[afterIndex]>arr[i]){
+//                    if (arr[preIndex]>arr[afterIndex]){
+//                        arr[i] = preIndex;
+//                    } else if (arr[preIndex]) {
+//
+//                    }
+//                }
+//            }
+//        }
+//    }
 
 }

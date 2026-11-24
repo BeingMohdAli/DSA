@@ -2,7 +2,7 @@ import java.awt.image.ImageProducer;
 import java.util.*;
 
 public class hg {
-    static void main() throws InterruptedException {
+    static void main() {
 //        List<Integer> l = new ArrayList<>();
 //        l.add(2);
 //        l.add(3);
@@ -61,5 +61,7 @@ public class hg {
 //    @Override
 //    public void run() {
 //        System.out.println(Thread.currentThread().getName());
+
 //    }
+//
 //}
